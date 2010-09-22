@@ -1,84 +1,343 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-	<title>comtom/codont @ GitHub</title>
-	
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Tom&aacute;s Gonz&aacute;lez Dowling" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="Servicios de Outsourcing informáticos" />
+	<meta name="robots" content="all" />
+	<title>Comtom Tech Support - Inicio</title>
+    <link rel="shortcut icon" href="favicon.ico">
 	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #065ADA;
-		  font-family: "Helvetica,Arial,FreeSans";
-  		color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; color: #f9a525; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #f9a525; }
-    h3 { text-align: center; color: #f9a525; }
-    a { color: #f9a525; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
+	body { 
+		background: #fff;
+		font: normal normal normal 13px/20px 'Lucida Grande', Arial, sans-serif;
+		margin: 0px;
+		}
+
+	#wrapper {
+		margin: 0 auto;
+		width: 960px;
+		}
+
+	#azul {
+		background: #065ada;
+		height: 10px;
+		width: 100%;
+		}
+
+	#header {
+		margin: 8px  15px;
+		background: url(img/title.png) no-repeat;
+		height: 114px;
+		width: 320px;
+		}
+
+	#help {
+		float: right;
+		margin:-80px 0 0;
+		width: 205px;
+		height: 60px;
+		}
+
+	#cont {
+		float: left;
+		padding: 10px;
+		background: #FFF;
+		width: 666px;
+		min-height: 520px;
+		position: relative;
+		z-index: 10;
+		}
+
+	#cont h1 {
+		padding: 0px;
+		color: #065ADA;
+		}
+		
+	#cont h2 {
+		padding: 0px;
+		color: #545454;
+		}
+
+	.post-meta {
+		font-size: 0.70em;
+		margin-bottom: 15px;
+		}
+
+	#promo {
+		border: solid 1px #c4c4c4;
+		padding: 3px;
+		margin: 32px 15px 15px 0;
+		}
+
+	#left {
+		float: left;
+		width: 327px;
+		margin-right: 11px;
+		margin-top: 15px;
+		}
+
+	#right {
+		float: left;
+		width: 327px;
+		margin-top: 15px;
+		}
+
+	#barra {
+		float: left;
+		width: 250px;
+		}
+	#barra ul {
+		padding: 0px;
+		margin: 0px;
+		}
+
+	#barra ul li {
+		text-align: right;
+		list-style: none;
+		margin: 4px 5px ;
+		width: 249px;
+		height: 39px;
+		background: url(img/boton.png);
+		}
+
+	#barra ul li a, .webgen-menu-item-selected span {
+		color: #545454;
+		text-decoration: none;
+		text-align: left;
+		margin: 8px 36px;
+		float: left;
+		font-size:1.1em;
+		}
+
+	#barra ul li a:hover {
+		color: #000;
+		text-decoration: underline;
+		}
+
+	#nav-bg {
+		float: left;
+		background: #065ada;
+		height: 60px;
+		position: relative;
+		width: 100%;
+		margin: 10px 0;
+		}
+
+	#fb {
+		float: left;
+		position: relative;
+		list-style: none;
+		margin: 4px 12px ;
+		text-align: center;
+		}
+
+	#nav {
+		margin: 0 auto;
+		width: 960px;
+		display: inline;
+		float: none;
+		}
+
+	#nav ul li {
+		list-style: none inside none;
+		margin: 4px 5px;
+		display: inline;
+		float: none;
+		}
+		
+	#nav ul li a, #nav ul li span {
+		color: #fff;
+		margin: 5px 15px;
+		white-space: nowrap;
+		display: inline;
+		float: none;
+		}
+		
+	.webgen-menu-item-selected {
+		float: none;
+		}
+		
+	#nav ul li a:hover {
+		color: #000;
+		}
+
+	#footer {
+		float: left;
+		position: relative;
+		z-index: -10;
+		width: 100%;
+		font-size: 0.8em;
+		}
+
+	/* formularios.css */
+
+	#form {
+		font-size: 11px;
+		text-align: left;
+		}
+
+	#form input[type="text"], #form input[type="password"], #form textarea {
+		/*-moz-border-radius: 4px 4px 4px 4px;*/
+		border-radius: 4px 4px 4px 4px;
+		border: 1px solid #AACCEE;
+		display: block;
+		font-size: 13px;
+		margin: 0 0 5px;
+		padding: 5px;
+		width: 203px;
+		}
+
+	#deadline {
+		display: inline;
+		}
+
+	#captcha {
+		width: 0px;
+		height: 0px;
+		border: 0px;
+		visibility:hidden;
+		}
+
+	#form textarea {
+		width: 400px;
+		}
+
+	/* carrusel.css */
+
+	#image {
+		border: 0 none;
+		height: 234px;
+		padding: 5px;
+		position: relative;
+		width: 587px;
+		}
+
+	#image img {
+		position: absolute;
+		top: 5px;
+		left: 5px
+		}
+
+	#thumbwrapper, #thumbs , #thumbarea {
+		overflow: hidden;
+		height: 0px;
+		width: 0px;
+		border: 0px;
+		}
+
+	/* acordeon.css */
+
+	#accordion h3 {
+		/*background: url(img/back-acordeon.png);*/
+		/*background: #545454; gris*/
+		background: #AAD400;
+		border-top-right-radius: 5px 5px;
+		border-top-left-radius: 5px 5px;
+		/*width: 453px;*/
+		height: 23px;
+		padding: 3px 5px;
+		}
+
+	#accordion a {
+		text-decoration: none;
+		/*color: #fff;*/
+		color: #445500;
+		}
+
+	#accordion p {
+		margin: 0px;
+		}
+
+	#accordion h4{
+		color: #065ADA;
+		}
+
+	.ui-accordion .ui-accordion-content {
+		/*border: 1px solid #545454;*/
+		 border: 1px solid #AAD400;
+		}
 	</style>
-	
 </head>
-
 <body>
-  <a href="http://github.com/comtom/codont"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<script type="text/javascript">
+    $(function() {
+        $("#accordion").accordion();
+    });
+</script>
+    <div id="azul"></div>
+	<div id="wrapper">
+		<div id="header"></div>
+        <div id="help">
+            <a href="index.html"><img alt="" border="0" src="img/inicio.png" /></a>
+            <a href="buscar.html"><img alt="" border="0" src="img/buscar.png" /></a>
+            <a href="mapa.html"> <img alt="" border="0" src="img/mapa.png" /></a>
+        </div>
+		<div id="cont">
+			<div class="download">
+			  <a href="http://github.com/comtom/codont/zipball/master">
+				<img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+			  <a href="http://github.com/comtom/codont/tarball/master">
+				<img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+			</div>
 
-  <div id="container">
+			<h1><a href="http://github.com/comtom/codont">codont</a>
+			  <span class="small">by <a href="http://github.com/comtom">comtom</a></span></h1>
+			<div class="description">
+			  Consultorio odontologico
+			</div>
+			<p>Gestion de turnos para consultorios odontologicos</p>
+			<h2>Dependencies</h2>
+			<p>django</p>
+			<h2>License</h2>
+			<p>GNU GPL</p>
+			<h2>Authors</h2>
+			<p>Comtom Tech Support (ventas@comtom.com.ar)
+			<br/>
+			<br/>      </p>
+			<h2>Contact</h2>
+			<p>Tomás (tomas@comtom.com.ar)
+			<br/>      </p>
 
-    <div class="download">
-      <a href="http://github.com/comtom/codont/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/comtom/codont/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+			<h2>Download</h2>
+			<p>
+			  You can download this project in either
+			  <a href="http://github.com/comtom/codont/zipball/master">zip</a> or
+			  <a href="http://github.com/comtom/codont/tarball/master">tar</a> formats.
+			</p>
+			<p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+			  by running:
+			  <pre>$ git clone git://github.com/comtom/codont</pre>
+			</p>
+
+			<div class="footer">
+			  get the source code: <a href="http://github.com/comtom/codont">comtom/codont</a>
+			</div>
+
+		</div>
+		<div id="barra">
+        <ul><li class="webgen-menu-level1 webgen-menu-item-selected"><span>Inicio</span></li><li class="webgen-menu-level1"><a href="servicios.html">Servicios</a></li><li class="webgen-menu-level1"><a href="institucional.html">Institucional</a></li><li class="webgen-menu-level1"><a href="soporte.html">Soporte a clientes</a></li><li class="webgen-menu-level1"><a href="oportunidad.html">Oportunidad laboral</a></li><li class="webgen-menu-level1"><a href="contacto.html">Cont&aacute;ctenos</a></li></ul>
+            <div id="fb">
+                <a href="http://www.facebook.com/comtomts" target="_TOP" title="Comtom Tech Support en Facebook">
+			<img src="http://badge.facebook.com/badge/103882706321858.908.977206117.png" width="89" height="84" style="border: 0px; float: left; margin: 10px;" />
+	    	</a>
+		<a href="http://www.twitter.com/comtomts" target="_TOP" title="Comtom Tech Support en Twitter">
+			<img src="img/twitter.png" width="89" height="84" style="border: 0px; float: left; margin: 10px;" />
+		</a>
+            </div>
+		</div>
+	</div>
+    <div id="nav-bg">
+        <div id="nav">
+            <center>
+                <ul><li class="webgen-menu-level1 webgen-menu-item-selected"><span>Inicio</span></li><li class="webgen-menu-level1"><a href="servicios.html">Servicios</a></li><li class="webgen-menu-level1"><a href="institucional.html">Institucional</a></li><li class="webgen-menu-level1"><a href="soporte.html">Soporte a clientes</a></li><li class="webgen-menu-level1"><a href="oportunidad.html">Oportunidad laboral</a></li><li class="webgen-menu-level1"><a href="contacto.html">Cont&aacute;ctenos</a></li></ul>
+            </center>
+        </div>
     </div>
-
-    <h1><a href="http://github.com/comtom/codont">codont</a>
-      <span class="small">by <a href="http://github.com/comtom">comtom</a></span></h1>
-
-    <div class="description">
-      Consultorio odontologico
-    </div>
-
-    <p>Gestion de turnos para consultorios odontologicos</p><h2>Dependencies</h2>
-<p>django</p>
-<h2>License</h2>
-<p>GNU GPL</p>
-<h2>Authors</h2>
-<p>Comtom Tech Support (ventas@comtom.com.ar)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>Tomás (tomas@comtom.com.ar)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/comtom/codont/zipball/master">zip</a> or
-      <a href="http://github.com/comtom/codont/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/comtom/codont</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/comtom/codont">comtom/codont</a>
-    </div>
-
-  </div>
-
-  
+	<div id="footer">
+        <!-- Página generada el 2010-09-08 13:41:14 -->
+		<center>Comtom Tech Support © 2010 Todos los derechos reservados</center>
+	</div>
 </body>
 </html>
