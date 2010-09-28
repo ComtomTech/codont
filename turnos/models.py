@@ -82,5 +82,5 @@ class Turno(models.Model):
 	afiliado = models.ForeignKey(Afiliado)
 	profesional = models.ForeignKey(Profesional)
 	
-	#def __unicode__(self):
-	#	return self.afiliado
+	def __unicode__(self):
+		return (self.afiliado.name + ' ' + self.afiliado.apellido )
