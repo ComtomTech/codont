@@ -1,14 +1,19 @@
 from django.db import models
 from datetime import datetime
 
-ESTADOS = (
-	(0 , 'Nuevo'),   # locos con menos de 6 meses d antiguedad
-    (1 , 'Activo'),  # paga al dia
-    (2 , 'Pasivo'),  # no paga
-    (3 , 'Baja'),    # se fue o lo dieron de baja por moroso hdp
+ESTADO_AFILIADO = (
+    (1, 'Nuevo'),   # locos con menos de 6 meses d antiguedad
+    (2, 'Activo'),  # paga al dia
+    (3, 'Pasivo'),  # no paga
+    (4, 'Baja'),    # se fue o lo dieron de baja por moroso hdp
 )
 
-# Create your models here.
+ESTADO_TURNO = (
+    (1, 'Tomado'),
+    (2, 'Utilizado'),
+    (3, 'Baja'),
+    (4, 'Ausente'),
+)
 
 class Prestadora(models.Model):
 	nombre = models.CharField (max_length=100)
@@ -40,7 +45,7 @@ class Afiliado(models.Model):
 	nombre = models.CharField (max_length=100)
 	apellido = models.CharField (max_length=100)
 	documento = models.IntegerField ()
-	estado = models.IntegerField (choices=ESTADOS)
+	estado = models.IntegerField(choices=ESTADOS)
 	prestadora = models.ForeignKey(Prestadora)
 	telefono = models.IntegerField ()
 	direccion = models.CharField (max_length=100)
@@ -56,6 +61,9 @@ class Afiliado(models.Model):
 class Prestacion(models.Model):
 	codigo = models.IntegerField ()
 	descripcion = models.CharField (max_length=100)
+	costo_prestadora = models.DecimalField()
+	costo_particular = models.DecimalField()
+	importe_coseguro = models.DecimalField()
 
 	class Meta:
 		verbose_name_plural = ('Prestaciones')
@@ -63,11 +71,14 @@ class Prestacion(models.Model):
 	def __unicode__(self):
 		return self.descripcion
 
+
 class Prestacion_afiliado(models.Model):
 	afiliado = models.ForeignKey(Afiliado)
 	prestacion = models.ManyToManyField(Prestacion)
 	profesional = models.ForeignKey(Profesional)
-	tiempo = models.DateTimeField(default = datetime.now)
+	fecha = models.DateTimeField(default = datetime.now)
+	importe_coseguro = models.DecimalField()
+	costo = models.DecimalField()
 
 	class Meta:
 		verbose_name = ('Prestacion por afiliado')
@@ -78,7 +89,8 @@ class Prestacion_afiliado(models.Model):
 
 
 class Turno(models.Model):
-	tiempo = models.DateTimeField(default = datetime.now)
+	fecha = models.DateTimeField(default = datetime.now)
+	estado = models.IntegerField(choices=ESTADO_TURNO)
 	afiliado = models.ForeignKey(Afiliado)
 	profesional = models.ForeignKey(Profesional)
 	
